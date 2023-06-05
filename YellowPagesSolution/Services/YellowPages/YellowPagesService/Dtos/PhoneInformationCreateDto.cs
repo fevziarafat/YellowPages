@@ -1,7 +1,7 @@
 ﻿namespace YellowPagesService.Dtos;
 
-public class LocationInformationCreateDto
+public class PhoneInformationCreateDto
 {
-    public string Location { get; set; }
+    public string Phone { get; set; }
     public string ContactId { get; set; }
 }

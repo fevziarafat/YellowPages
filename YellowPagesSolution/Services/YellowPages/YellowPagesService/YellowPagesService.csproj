@@ -22,4 +22,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\YellowPages.Shared\YellowPages.Shared\YellowPages.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
