@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontends", "Frontends", "{369555E1-828E-41FA-AB08-E3DD07ED06CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateways", "Gateways", "{8A0E88AF-D1F1-4FD8-BE31-CBC220962AB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{4A7E1F66-E6D5-4913-AE25-FADEF2DD7334}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{FC695E01-EFBC-4D2F-8FAC-3A3DCA40CC21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{748B03A7-4258-458C-B1FD-0EB4C8DD9118}"
+	ProjectSection(SolutionItems) = preProject
+		Ports.txt = Ports.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{0B880F5D-2EC2-42D3-9BE8-A4013CB15566}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YellowPagesReportService", "Services\YellowPagesReportService\YellowPagesReportService.csproj", "{988FC19E-9291-4F1E-A7A7-03C5E5442F06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YellowPagesService", "Services\YellowPages\YellowPagesService\YellowPagesService.csproj", "{079E42F0-735B-4B22-B59B-397EA6297694}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YellowPages.Shared", "Shared\YellowPages.Shared\YellowPages.Shared\YellowPages.Shared.csproj", "{E5BBA1AB-4A34-4146-B166-700E8E71241F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGateway", "Gateways\WebGateway\WebGateway.csproj", "{797D9E59-1483-4B25-9449-E61812AB3BA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{D59E6FBB-8100-4F73-AE87-297A98912F63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YellowPagesWeb", "Frontends\YellowPagesWeb\YellowPagesWeb.csproj", "{42DB3006-0BCB-4615-B024-BF20BA4D1A87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{988FC19E-9291-4F1E-A7A7-03C5E5442F06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{988FC19E-9291-4F1E-A7A7-03C5E5442F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{988FC19E-9291-4F1E-A7A7-03C5E5442F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{988FC19E-9291-4F1E-A7A7-03C5E5442F06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{079E42F0-735B-4B22-B59B-397EA6297694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{079E42F0-735B-4B22-B59B-397EA6297694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{079E42F0-735B-4B22-B59B-397EA6297694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{079E42F0-735B-4B22-B59B-397EA6297694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5BBA1AB-4A34-4146-B166-700E8E71241F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5BBA1AB-4A34-4146-B166-700E8E71241F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5BBA1AB-4A34-4146-B166-700E8E71241F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5BBA1AB-4A34-4146-B166-700E8E71241F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{797D9E59-1483-4B25-9449-E61812AB3BA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{797D9E59-1483-4B25-9449-E61812AB3BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{797D9E59-1483-4B25-9449-E61812AB3BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{797D9E59-1483-4B25-9449-E61812AB3BA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D59E6FBB-8100-4F73-AE87-297A98912F63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D59E6FBB-8100-4F73-AE87-297A98912F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D59E6FBB-8100-4F73-AE87-297A98912F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D59E6FBB-8100-4F73-AE87-297A98912F63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42DB3006-0BCB-4615-B024-BF20BA4D1A87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42DB3006-0BCB-4615-B024-BF20BA4D1A87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42DB3006-0BCB-4615-B024-BF20BA4D1A87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42DB3006-0BCB-4615-B024-BF20BA4D1A87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{988FC19E-9291-4F1E-A7A7-03C5E5442F06} = {4A7E1F66-E6D5-4913-AE25-FADEF2DD7334}
+		{079E42F0-735B-4B22-B59B-397EA6297694} = {4A7E1F66-E6D5-4913-AE25-FADEF2DD7334}
+		{E5BBA1AB-4A34-4146-B166-700E8E71241F} = {FC695E01-EFBC-4D2F-8FAC-3A3DCA40CC21}
+		{797D9E59-1483-4B25-9449-E61812AB3BA2} = {8A0E88AF-D1F1-4FD8-BE31-CBC220962AB3}
+		{D59E6FBB-8100-4F73-AE87-297A98912F63} = {0B880F5D-2EC2-42D3-9BE8-A4013CB15566}
+		{42DB3006-0BCB-4615-B024-BF20BA4D1A87} = {369555E1-828E-41FA-AB08-E3DD07ED06CA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7BBAFB75-FBCE-4CF5-85D3-07AE41E4A6A3}
+	EndGlobalSection
+EndGlobal

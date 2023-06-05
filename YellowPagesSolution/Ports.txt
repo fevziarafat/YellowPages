@@ -1,0 +1,6 @@
+Services 
+ - YellowPagesWeb => 5015
+ - YellowPagesService => 5011
+ - YellowPagesReportService => 5013
+ - Gateway => 5000
+ - IdentityServer => 5001
