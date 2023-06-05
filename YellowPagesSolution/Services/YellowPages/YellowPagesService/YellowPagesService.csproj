@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\..\..\Shared\YellowPages.Shared\YellowPages.Shared\YellowPages.Shared.csproj" />
   </ItemGroup>
 
 </Project>

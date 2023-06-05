@@ -1,4 +1,4 @@
-﻿namespace YellowPagesService.Dtos;
+﻿namespace YellowPagesReportService.Dtos;
 
 public class YellowPagesReportDto
 {

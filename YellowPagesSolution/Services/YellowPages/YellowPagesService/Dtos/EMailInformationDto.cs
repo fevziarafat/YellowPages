@@ -1,4 +1,4 @@
-﻿namespace YellowPagesReportService.Dtos;
+﻿namespace YellowPagesService.Dtos;
 
 public class EMailInformationDto
 {
