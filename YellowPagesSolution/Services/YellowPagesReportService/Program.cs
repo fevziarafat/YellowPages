@@ -1,4 +1,6 @@
 
+using MassTransit;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -25,6 +27,25 @@ builder.Services.AddSingleton<YellowPages.Shared.Settings.IDatabaseSettings>(sp 
 
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
+builder.Services.AddMassTransit(x =>
+{
+    x.AddConsumer<YellowPagesReportService.Consumers.CreateCommandConsumer>();
+
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        cfg.Host(builder.Configuration["RabbitMQUrl"], "/", host =>
+        {
+            host.Username("guest");
+            host.Password("guest");
+        });
+
+        cfg.ReceiveEndpoint("create-report-service", e =>
+        {
+            e.ConfigureConsumer<YellowPagesReportService.Consumers.CreateCommandConsumer>(context);
+        });
+    });
+});
 
 var app = builder.Build();
 

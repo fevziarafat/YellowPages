@@ -1,3 +1,4 @@
+using MassTransit;
 using System.ComponentModel;
 using YellowPagesService.Services;
 
@@ -25,6 +26,18 @@ builder.Services.AddSingleton<YellowPages.Shared.Settings.IDatabaseSettings>(sp 
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
+builder.Services.AddMassTransit(x =>
+{
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        cfg.Host(builder.Configuration["RabbitMQUrl"], "/", host =>
+        {
+            host.Username("guest");
+            host.Password("guest");
+        });
+    });
+});
 
 var app = builder.Build();
 
