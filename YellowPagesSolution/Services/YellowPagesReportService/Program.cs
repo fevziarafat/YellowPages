@@ -7,11 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .AddScoped<YellowPagesReportService.Services.IYellowPagesReportService,
         YellowPagesReportService.Services.YellowPagesReportService>();
-//builder.Services.AddControllers(
-//    opt => { opt.Filters.Add(new Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter()); }
-//);
+builder.Services.AddControllers(
+    opt => { opt.Filters.Add(new Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter()); }
+);
 
-builder.Services.AddControllers();
+//builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -47,6 +47,13 @@ builder.Services.AddMassTransit(x =>
     });
 });
 
+builder.Services.AddAuthentication(Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.Authority = builder.Configuration["IdentityServerURL"];
+    options.Audience = "report_yellowpages";
+    options.RequireHttpsMetadata = false;
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -56,9 +63,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-//app.UseAuthentication();
+app.UseAuthentication();
 
-//app.UseAuthorization();
+app.UseAuthorization();
 
 app.MapControllers();
 
