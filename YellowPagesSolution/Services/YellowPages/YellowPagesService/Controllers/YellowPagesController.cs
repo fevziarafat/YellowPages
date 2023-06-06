@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MassTransit;
+using Microsoft.AspNetCore.Mvc;
 using YellowPages.Shared.ControllerBase;
+using YellowPages.Shared.Dtos;
+using YellowPages.Shared.Messages;
 
 namespace YellowPagesService.Controllers;
 
@@ -7,13 +10,14 @@ namespace YellowPagesService.Controllers;
 [ApiController]
 public class YellowPagesController : CustomBaseController
 {
-
+    private readonly ISendEndpointProvider _sendEndpointProvider;
     private readonly YellowPagesService.Services.IYellowPagesService _yellowPagesService;
 
-    public YellowPagesController(YellowPagesService.Services.IYellowPagesService yellowPagesService)
+    public YellowPagesController(YellowPagesService.Services.IYellowPagesService yellowPagesService, ISendEndpointProvider sendEndpointProvider)
     {
         _yellowPagesService = yellowPagesService;
-      
+        _sendEndpointProvider = sendEndpointProvider;
+
     }
 
     [HttpGet]
@@ -52,5 +56,18 @@ public class YellowPagesController : CustomBaseController
         return CreateActionResultInstance(response);
     }
 
- 
+    [Microsoft.AspNetCore.Mvc.HttpPostAttribute]
+    [Microsoft.AspNetCore.Mvc.RouteAttribute("/api/[controller]/ReceiveReport/{location}")]
+    public async Task<IActionResult> ReceiveReport(string location)
+    {
+        var createMessage = new CreateReportCommand();
+        createMessage.Location = location;
+        var sendEndpoint = await _sendEndpointProvider.GetSendEndpoint(new Uri("queue:create-report-service"));
+
+        await sendEndpoint.Send<CreateReportCommand>(createMessage);
+
+        return CreateActionResultInstance(YellowPages.Shared.Dtos.Response<NoContent>.Success(200));
+    }
+
+
 }

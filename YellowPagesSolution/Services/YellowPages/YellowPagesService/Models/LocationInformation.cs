@@ -6,7 +6,6 @@ public class LocationInformation
     [MongoDB.Bson.Serialization.Attributes.BsonRepresentationAttribute(MongoDB.Bson.BsonType.ObjectId)]
     public string Id { get; set; }
 
-    public int LocationCount { get; set; }
     public string Location { get; set; }
 
     [MongoDB.Bson.Serialization.Attributes.BsonRepresentationAttribute(MongoDB.Bson.BsonType.ObjectId)]
