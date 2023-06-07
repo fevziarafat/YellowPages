@@ -1,10 +1,10 @@
 ﻿using YellowPagesUI.Models.PhoneInformation;
 
-namespace YellowPagesUI.Models.Contact;
+namespace YellowPagesUI.Models.YellowPages;
 
-public class ContactDto
+public class YellowPagesDto
 {
-    public ContactDto()
+    public YellowPagesDto()
     {
         eMailInformations = new HashSet<EMailInformations.EMailInformationDto>();
         locationInformations = new HashSet<LocationInformationDto>();

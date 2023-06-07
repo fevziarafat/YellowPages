@@ -1,6 +1,6 @@
 ﻿namespace YellowPagesUI.Models.Contact;
 
-public class ContactReportCreateDto
+public class YellowPagesReportCreateDto
 {
     public string Location { get; set; }
 }
