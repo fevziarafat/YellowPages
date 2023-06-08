@@ -93,6 +93,7 @@ public class YellowPagesReportService : IYellowPagesReportService
         model.Location = yellowReportCreateDto.Location;
         model.LocationContactCount = yellowPagesCount;
         model.LocationPhoneCount = phoneCount;
+        model.CreatedTime = DateTime.Now;
 
         await _yellowPagesReportCollection.InsertOneAsync(model);
         return YellowPages.Shared.Dtos.Response<YellowPagesReportDto>.Success(
