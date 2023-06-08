@@ -1,4 +1,5 @@
-﻿using YellowPagesUI.Models.PhoneInformation;
+﻿using YellowPagesUI.Models.LocationInformation;
+using YellowPagesUI.Models.PhoneInformation;
 
 namespace YellowPagesUI.Models.YellowPages;
 

@@ -1,5 +1,7 @@
 ﻿
 
+using YellowPagesUI.Models.Report;
+
 namespace YellowPagesUI.Services
 {
     public class ReportService : IReportService
@@ -13,7 +15,7 @@ namespace YellowPagesUI.Services
 
         public async Task<List<YellowPagesUI.Models.Report.ReportDto>> GetAllReportAsync()
         {
-            var response = await _httpClient.GetAsync("ContactsReport");
+            var response = await _httpClient.GetAsync("yellowpagesreport/GetAllReport");
 
             if (!response.IsSuccessStatusCode)
             {
@@ -25,5 +27,23 @@ namespace YellowPagesUI.Services
             return responseSuccess.Data;
         }
 
+        public async Task<ReportDto> ReportById(string id)
+        {
+            var report = await _httpClient.GetAsync($"yellowpagesreport/ReportById/{id}");
+            //var contacts = await GetByIdAsync(id);
+
+            if (report == null)
+
+            {
+                return null;
+            }
+            else
+            {
+
+                var response = await report.Content.ReadFromJsonAsync<YellowPages.Shared.Dtos.Response<ReportDto>>();
+                return response.Data;
+            }
+
+        }
     }
 }

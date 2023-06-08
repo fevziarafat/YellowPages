@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model LocationInformationCreateDto
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Contact ekleme </h5>
+
+                <form asp-controller="YellowPages" asp-action="AddLocation" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly"></div>
+
+                    <input type="hidden" asp-for="ContactId" />
+                    <div class="mb-3">
+                        <label asp-for="Location" class="form-label"></label>
+                        <input asp-for="Location" class="form-control" />
+                        <span class="text-danger" asp-validation-for="Location"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Location Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

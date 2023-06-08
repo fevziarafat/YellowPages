@@ -1,0 +1,41 @@
+﻿@model YellowPagesCreateDto
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Contact ekleme </h5>
+
+                <form asp-controller="YellowPages" asp-action="Create" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly"></div>
+
+
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="SurName" class="form-label"></label>
+                        <input asp-for="SurName" class="form-control" />
+                        <span class="text-danger" asp-validation-for="SurName"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Firm" class="form-label"></label>
+                        <textarea asp-for="Firm" class="form-control"></textarea>
+                        <span class="text-danger" asp-validation-for="Firm"></span>
+                    </div>
+
+                    
+
+                    <button type="submit" class="btn btn-primary">Yellow Pages Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

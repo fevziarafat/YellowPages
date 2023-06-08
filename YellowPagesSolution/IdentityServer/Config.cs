@@ -15,7 +15,7 @@ namespace IdentityServerForContact
         {
 
             new ApiResource("resource_yellowpages"){Scopes={"yellowpages_fullpermission"}},
-            new ApiResource("resource_report"){Scopes={"report_fullpermission"}},
+            new ApiResource("report_yellowpages"){Scopes={"report_fullpermission"}},
             new ApiResource("resource_gateway"){Scopes={"gateway_fullpermission"}},
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };

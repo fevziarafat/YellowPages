@@ -41,7 +41,6 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     opts.Cookie.Name = "contactcookie";
 });
 
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -55,7 +54,6 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

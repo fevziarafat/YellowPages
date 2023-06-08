@@ -1,4 +1,4 @@
-﻿namespace YellowPagesUI.Models.Contact;
+﻿namespace YellowPagesUI.Models.YellowPages;
 
 public class YellowPagesReportCreateDto
 {

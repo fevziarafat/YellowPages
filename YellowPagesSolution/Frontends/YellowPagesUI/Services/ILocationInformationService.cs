@@ -3,7 +3,7 @@
 public interface ILocationInformationService
 
 {
-    Task<bool> CreateAsync(YellowPagesUI.Models.PhoneInformation.LocationInformationCreateDto locationInformationCreateDto);
+    Task<bool> CreateAsync(YellowPagesUI.Models.LocationInformation.LocationInformationCreateDto locationInformationCreateDto);
 
     Task<bool> DeleteAsync(string id);
 }

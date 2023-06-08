@@ -10,9 +10,9 @@ namespace YellowPagesUI.Services
         {
             _httpClient = httpClient;
         }
-        public async Task<bool> CreateAsync(YellowPagesUI.Models.PhoneInformation.LocationInformationCreateDto locationInformationCreateDto)
+        public async Task<bool> CreateAsync(YellowPagesUI.Models.LocationInformation.LocationInformationCreateDto locationInformationCreateDto)
         {
-            var response = await _httpClient.PostAsJsonAsync<YellowPagesUI.Models.PhoneInformation.LocationInformationCreateDto>("locations", locationInformationCreateDto);
+            var response = await _httpClient.PostAsJsonAsync<YellowPagesUI.Models.LocationInformation.LocationInformationCreateDto>("locations", locationInformationCreateDto);
 
             return response.IsSuccessStatusCode;
         }

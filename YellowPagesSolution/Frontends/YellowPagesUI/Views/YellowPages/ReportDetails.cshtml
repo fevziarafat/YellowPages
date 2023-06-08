@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ReportDto
+<div class="row">
+
+    <div class="col-md-9">
+
+        <div class="card">
+            <div class="card-body">
+
+                <h5 class="card-title">Rapor Ayrıntıları</h5>
+
+                <table class="table table-striped">
+
+                    <tr>
+                        <td>Oluşturma Tarihi</td>
+                        <td>@Model.CreatedTime</td>
+                    </tr>
+                    <tr>
+                        <td>Location da kayıtlı telefon sayısı</td>
+                        <td>@Model.LocationPhoneCount</td>
+                    </tr>
+                    <tr>
+                        <td>Location daki yellow pages sayısı</td>
+                        <td>@Model.LocationContactCount</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

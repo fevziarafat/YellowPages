@@ -1,4 +1,4 @@
-﻿namespace YellowPagesUI.Models.PhoneInformation;
+﻿namespace YellowPagesUI.Models.LocationInformation;
 
 public class LocationInformationCreateDto
 {

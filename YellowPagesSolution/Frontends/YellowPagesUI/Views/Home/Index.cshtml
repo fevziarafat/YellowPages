@@ -3,6 +3,23 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    
+    
+    @if (User.Identity.IsAuthenticated)
+    {
+        <h1 class="display-4">Welcome</h1>
+
+        <a class="nav-link text-dark" asp-area="" asp-controller="YellowPages" asp-action="Index">Yellow Pages Listesi</a>
+
+        <a class="nav-link text-dark" asp-area="" asp-controller="YellowPages" asp-action="Create">Yellow Pages Ekle</a>
+
+        <a class="nav-link text-dark" asp-area="" asp-controller="YellowPages" asp-action="AddReport">Raporlar</a>
+     
+    }
+
+    else
+    {
+        <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="SignIn">Giriş yap</a>
+    }
+   
 </div>

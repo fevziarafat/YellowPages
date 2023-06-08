@@ -26,7 +26,7 @@
           "Port": 5013
         }
       ],
-      "UpstreamPathTemplate": "/services/report/{everything}",
+      "UpstreamPathTemplate": "/services/yellowpagesreport/{everything}",
       "UpstreamHttpMethod": [
         "Get"
       ],
