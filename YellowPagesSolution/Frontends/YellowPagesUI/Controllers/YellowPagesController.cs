@@ -131,7 +131,6 @@ namespace YellowPagesUI.Controllers
         {
             var result = await _locationInformationService.DeleteAsync(id);
 
-            var k = result;
             return RedirectToAction(nameof(Index));
         }
 
@@ -150,7 +149,6 @@ namespace YellowPagesUI.Controllers
             return View(await _yellowPagesService.GetAllContactAsync());
 
         }
-
         
 
         public async Task<Microsoft.AspNetCore.Mvc.IActionResult> AddReport2(string location)
@@ -158,9 +156,7 @@ namespace YellowPagesUI.Controllers
 
             _yellowPagesService.AddReport(location);
 
-          
-
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(AddReport));
         }
 
         public async Task<Microsoft.AspNetCore.Mvc.IActionResult> ReportDetails(string location)
@@ -170,7 +166,6 @@ namespace YellowPagesUI.Controllers
 
             return View(report);
 
-            //return RedirectToAction(nameof(Index));
         }
 
     }

@@ -7,13 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\YellowPages.Entity\YellowPages.Entities.csproj" />
     <ProjectReference Include="..\YellowPages.Shared\YellowPages.Shared\YellowPages.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="YellowPagesReportService.Entities">
-      <HintPath>..\..\..\..\yellowpageprivate\YellowPagesSolution\Services\YellowPagesReportService.Entities\bin\Debug\net6.0\YellowPagesReportService.Entities.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+
+
+
 </Project>

@@ -8,7 +8,7 @@ using YellowPages.Data.Abstract;
 using YellowPages.Shared.Models;
 using YellowPages.Shared.Settings;
 
-using YellowPagesReportService.Entities.Concrete;
+
 
 using MongoDbEntity = YellowPages.Shared.Models.MongoDbEntity;
 
@@ -42,38 +42,6 @@ namespace YellowPages.Data.Concrete
         }
 
 
-        public virtual async Task<List<T>> GetListAsync(Expression<Func<T, bool>> predicate)
-        {
-            
-            
-            var filter = new ExpressionFilterDefinition<T>(predicate);
-           var list=await Collection.Find(filter).ToListAsync();
-           var listb = list;
-           return listb;
-           // return Collection.AsQueryable().ToListAsync();
-           // return Collection.Find(T,null)
-           //  MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync(
-           // IMongoCollectionExtensions.Find(_phoneInformationCollection, a => true));
-
-        }
-
-
-
-        //public virtual List<T> GetList(Expression<Func<T, bool>> predicate = null)
-        //{
-        //    var datas = db.GetCollection<T>(settings.ConnectionString).AsQueryable()
-        //        .Where(predicate).ToList();
-
-        //    return datas;
-
-        //    // return predicate == null
-        //    //     ? Collection.AsQueryable()
-        //    //     : Collection.AsQueryable().Where(predicate);
-
-        //    //var r= MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync(
-        //    //  IMongoCollectionExtensions.Find(=> true));
-
-        //}
 
         public virtual Task<T> GetByIdAsync(string id)
         {

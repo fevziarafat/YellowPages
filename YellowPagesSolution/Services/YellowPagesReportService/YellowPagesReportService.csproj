@@ -42,7 +42,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\yellowpageprivate\YellowPagesSolution\Services\YellowPagesReportService.Business\YellowPagesReportService.Business.csproj" />
-    <ProjectReference Include="..\..\Shared\YellowPages.Shared\YellowPages.Shared\YellowPages.Shared.csproj" />
   </ItemGroup>
 
 

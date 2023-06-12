@@ -28,15 +28,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGateway", "Gateways\WebG
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{D59E6FBB-8100-4F73-AE87-297A98912F63}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YellowPagesUI", "Frontends\YellowPagesUI\YellowPagesUI.csproj", "{44C49BEC-7E49-48AC-90BC-77139177D7AA}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YellowPagesUI.Business", "..\..\yellowpageprivate\YellowPagesSolution\Frontends\YellowPagesUI.Business\YellowPagesUI.Business.csproj", "{7EB49FF3-E951-43DD-B782-7F279D6F3EBF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YellowPagesReportService.Business", "..\..\yellowpageprivate\YellowPagesSolution\Services\YellowPagesReportService.Business\YellowPagesReportService.Business.csproj", "{AF05454F-370E-4BC3-B7EB-ED293A41C12E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YellowPagesService.Business", "..\..\yellowpageprivate\YellowPagesSolution\Services\YellowPagesService.Business\YellowPagesService.Business.csproj", "{429E693E-17A0-4EF0-8935-7E75BD40E541}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YellowPages.Data", "Shared\YellowPages.Data\YellowPages.Data.csproj", "{F4F1119C-289D-42D0-8C48-EF7EE177C6D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YellowPages.Data", "Shared\YellowPages.Data\YellowPages.Data.csproj", "{F4F1119C-289D-42D0-8C48-EF7EE177C6D4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YellowPagesUI", "Frontends\YellowPagesUI\YellowPagesUI.csproj", "{8244342D-4D2D-4E23-B436-E00A50158682}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,10 +64,6 @@ Global
 		{D59E6FBB-8100-4F73-AE87-297A98912F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D59E6FBB-8100-4F73-AE87-297A98912F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D59E6FBB-8100-4F73-AE87-297A98912F63}.Release|Any CPU.Build.0 = Release|Any CPU
-		{44C49BEC-7E49-48AC-90BC-77139177D7AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{44C49BEC-7E49-48AC-90BC-77139177D7AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{44C49BEC-7E49-48AC-90BC-77139177D7AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{44C49BEC-7E49-48AC-90BC-77139177D7AA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7EB49FF3-E951-43DD-B782-7F279D6F3EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7EB49FF3-E951-43DD-B782-7F279D6F3EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EB49FF3-E951-43DD-B782-7F279D6F3EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -84,6 +80,10 @@ Global
 		{F4F1119C-289D-42D0-8C48-EF7EE177C6D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4F1119C-289D-42D0-8C48-EF7EE177C6D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4F1119C-289D-42D0-8C48-EF7EE177C6D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8244342D-4D2D-4E23-B436-E00A50158682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8244342D-4D2D-4E23-B436-E00A50158682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8244342D-4D2D-4E23-B436-E00A50158682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8244342D-4D2D-4E23-B436-E00A50158682}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,11 +94,11 @@ Global
 		{E5BBA1AB-4A34-4146-B166-700E8E71241F} = {FC695E01-EFBC-4D2F-8FAC-3A3DCA40CC21}
 		{797D9E59-1483-4B25-9449-E61812AB3BA2} = {8A0E88AF-D1F1-4FD8-BE31-CBC220962AB3}
 		{D59E6FBB-8100-4F73-AE87-297A98912F63} = {0B880F5D-2EC2-42D3-9BE8-A4013CB15566}
-		{44C49BEC-7E49-48AC-90BC-77139177D7AA} = {369555E1-828E-41FA-AB08-E3DD07ED06CA}
 		{7EB49FF3-E951-43DD-B782-7F279D6F3EBF} = {369555E1-828E-41FA-AB08-E3DD07ED06CA}
 		{AF05454F-370E-4BC3-B7EB-ED293A41C12E} = {4A7E1F66-E6D5-4913-AE25-FADEF2DD7334}
 		{429E693E-17A0-4EF0-8935-7E75BD40E541} = {4A7E1F66-E6D5-4913-AE25-FADEF2DD7334}
 		{F4F1119C-289D-42D0-8C48-EF7EE177C6D4} = {FC695E01-EFBC-4D2F-8FAC-3A3DCA40CC21}
+		{8244342D-4D2D-4E23-B436-E00A50158682} = {369555E1-828E-41FA-AB08-E3DD07ED06CA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BBAFB75-FBCE-4CF5-85D3-07AE41E4A6A3}

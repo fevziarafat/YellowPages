@@ -8,9 +8,6 @@ namespace YellowPages.Data.Abstract
     {
         IQueryable<T> Get(Expression<Func<T, bool>> predicate = null);
         Task<T> GetAsync(Expression<Func<T, bool>> predicate);
-        Task<List<T>> GetListAsync(Expression<Func<T, bool>> predicate);
-        // Task<List<T>> GetListAsync();
-        //List<T> GetList(Expression<Func<T, bool>> predicate = null);
         Task<T> GetByIdAsync(TKey id);
         Task<T> AddAsync(T entity);
         Task<bool> AddRangeAsync(IEnumerable<T> entities);
