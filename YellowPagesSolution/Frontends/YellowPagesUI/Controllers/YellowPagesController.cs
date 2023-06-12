@@ -1,17 +1,21 @@
-﻿namespace YellowPagesUI.Controllers
+﻿using YellowPages.Shared.Dtos;
+using YellowPagesUI.Business.Abstract;
+using IEMailInformationService = YellowPagesUI.Business.Abstract.IEMailInformationService;
+
+namespace YellowPagesUI.Controllers
 {
     [Microsoft.AspNetCore.Authorization.AuthorizeAttribute]
     public class YellowPagesController : Microsoft.AspNetCore.Mvc.Controller
     {
-        private readonly YellowPagesUI.Services.IEMailInformationService _eMailInformationService;
-        private readonly YellowPagesUI.Services.IPhoneInformationService _phoneInformationService;
-        private readonly YellowPagesUI.Services.ILocationInformationService _locationInformationService;
-        private readonly YellowPagesUI.Services.IYellowPagesService _yellowPagesService;
-        private readonly YellowPagesUI.Services.IReportService _reportService;
+        private readonly IEMailInformationService _eMailInformationService;
+        private readonly IPhoneInformationService _phoneInformationService;
+        private readonly ILocationInformationService _locationInformationService;
+        private readonly IYellowPagesService _yellowPagesService;
+        private readonly IReportService _reportService;
 
         private readonly YellowPages.Shared.Services.ISharedIdentityService _sharedIdentityService;
 
-        public YellowPagesController(YellowPagesUI.Services.IEMailInformationService eMailInformationService, YellowPagesUI.Services.IPhoneInformationService phoneInformationService, YellowPagesUI.Services.ILocationInformationService locationInformationService, YellowPages.Shared.Services.ISharedIdentityService sharedIdentityService, YellowPagesUI.Services.IYellowPagesService yellowPagesService, YellowPagesUI.Services.IReportService reportService)
+        public YellowPagesController(IEMailInformationService eMailInformationService, IPhoneInformationService phoneInformationService, ILocationInformationService locationInformationService, YellowPages.Shared.Services.ISharedIdentityService sharedIdentityService, IYellowPagesService yellowPagesService, IReportService reportService)
         {
             _eMailInformationService = eMailInformationService;
             _phoneInformationService = phoneInformationService;
@@ -27,15 +31,15 @@
         }
         public async Task<Microsoft.AspNetCore.Mvc.IActionResult> Create()
         {
-            var contacts = await _yellowPagesService.GetAllContactAsync();
+            var models = await _yellowPagesService.GetAllContactAsync();
 
-            ViewBag.contactsList = contacts;
+            ViewBag.contactsList = models;
 
             return View();
         }
 
         [Microsoft.AspNetCore.Mvc.HttpPostAttribute]
-        public async Task<Microsoft.AspNetCore.Mvc.IActionResult> Create(YellowPagesUI.Models.YellowPages.YellowPagesCreateDto contactCreateInput)
+        public async Task<Microsoft.AspNetCore.Mvc.IActionResult> Create(YellowPagesCreateDto contactCreateInput)
         {
 
             await _yellowPagesService.CreateAsync(contactCreateInput);
@@ -51,7 +55,7 @@
         [Microsoft.AspNetCore.Mvc.HttpPostAttribute]
         public async Task<Microsoft.AspNetCore.Mvc.IActionResult> AddEMail(string id, string email)
         {
-           YellowPagesUI.Models.EMailInformations.EMailInformationCreateDto model = new();
+          EMailInformationCreateDto model = new();
             model.ContactId = id;
             model.EMail = email;
             _eMailInformationService.CreateAsync(model);
@@ -78,7 +82,7 @@
         public async Task<Microsoft.AspNetCore.Mvc.IActionResult> AddPhone(string id, string phone)
         {
 
-            YellowPagesUI.Models.PhoneInformation.PhoneInformationCreateDto model = new();
+           PhoneInformationCreateDto model = new();
             model.ContactId = id;
             model.Phone = phone;
             _phoneInformationService.CreateAsync(model);
@@ -108,7 +112,7 @@
         public async Task<Microsoft.AspNetCore.Mvc.IActionResult> AddLocation(string id, string location)
         {
 
-            YellowPagesUI.Models.LocationInformation.LocationInformationCreateDto model = new();
+            LocationInformationCreateDto model = new();
             model.ContactId = id;
             model.Location = location;
             _locationInformationService.CreateAsync(model);

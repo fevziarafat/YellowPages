@@ -7,13 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RabbitMQ.Client;
-using YellowPagesReportService.Services;
+
+using YellowPages.Shared.Messages;
+using YellowPagesReportService.Business.Abstract;
 
 namespace YellowPagesReportService.Consumers
 {
-    public class CreateCommandConsumer : IConsumer<YellowPages.Shared.Messages.CreateReportCommand>
+    public class CreateCommandConsumer : IConsumer<CreateReportCommand>
     {
-        private readonly YellowPagesReportService.Services.IYellowPagesReportService _yellowPagesReportService;
+        private readonly IYellowPagesReportService _yellowPagesReportService;
 
         public CreateCommandConsumer(IYellowPagesReportService yellowPagesReportService)
         {

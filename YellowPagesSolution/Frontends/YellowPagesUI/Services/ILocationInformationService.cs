@@ -1,9 +1,11 @@
-﻿namespace YellowPagesUI.Services;
+﻿using YellowPages.Shared.Dtos;
+
+namespace YellowPagesUI.Services;
 
 public interface ILocationInformationService
 
 {
-    Task<bool> CreateAsync(YellowPagesUI.Models.LocationInformation.LocationInformationCreateDto locationInformationCreateDto);
+    Task<bool> CreateAsync(LocationInformationCreateDto locationInformationCreateDto);
 
     Task<bool> DeleteAsync(string id);
 }

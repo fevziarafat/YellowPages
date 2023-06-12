@@ -7,6 +7,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\**" />
+    <Content Remove="Models\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Services\ClientCredentialTokenService.cs" />
+    <Compile Remove="Services\EMailInformationService.cs" />
+    <Compile Remove="Services\IdentityService.cs" />
+    <Compile Remove="Services\IEMailInformationService.cs" />
+    <Compile Remove="Services\ILocationInformationService.cs" />
+    <Compile Remove="Services\Interfaces\IClientCredentialTokenService.cs" />
+    <Compile Remove="Services\Interfaces\IIdentityService.cs" />
+    <Compile Remove="Services\Interfaces\IUserService.cs" />
+    <Compile Remove="Services\IPhoneInformationService.cs" />
+    <Compile Remove="Services\IReportService.cs" />
+    <Compile Remove="Services\IYellowPagesService.cs" />
+    <Compile Remove="Services\LocationInformationService.cs" />
+    <Compile Remove="Services\PhoneInformationService.cs" />
+    <Compile Remove="Services\ReportService.cs" />
+    <Compile Remove="Services\ServiceApiSettings.cs" />
+    <Compile Remove="Services\UserService.cs" />
+    <Compile Remove="Services\YellowPagesService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="Views\Home\Index.cshtml" />
     <None Include="Views\Home\Privacy.cshtml" />
     <None Include="Views\Shared\Error.cshtml" />
@@ -65,7 +92,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\yellowpageprivate\YellowPagesSolution\Frontends\YellowPagesUI.Business\YellowPagesUI.Business.csproj" />
     <ProjectReference Include="..\..\Shared\YellowPages.Shared\YellowPages.Shared\YellowPages.Shared.csproj" />
   </ItemGroup>
+
 
 </Project>

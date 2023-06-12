@@ -1,19 +1,22 @@
-﻿namespace YellowPagesService.Controllers;
+﻿using YellowPages.Shared.Dtos;
+using YellowPagesService.Business.Abstract;
+
+namespace YellowPagesService.Controllers;
 
 [Microsoft.AspNetCore.Mvc.Route("api/[controller]")]
 [Microsoft.AspNetCore.Mvc.ApiController]
 public class PhonesController : YellowPages.Shared.ControllerBase.CustomBaseController
 {
-    private readonly YellowPages.Services.IPhoneInformationService _phoneInformationService;
+    private readonly IPhoneInformationService _phoneInformationService;
 
-    public PhonesController(YellowPages.Services.IPhoneInformationService phoneInformationService)
+    public PhonesController(IPhoneInformationService phoneInformationService)
     {
         _phoneInformationService = phoneInformationService;
     }
 
 
     [Microsoft.AspNetCore.Mvc.HttpPost]
-    public async Task<Microsoft.AspNetCore.Mvc.IActionResult> Create(YellowPagesService.Dtos.PhoneInformationCreateDto phoneInformationCreateDto)
+    public async Task<Microsoft.AspNetCore.Mvc.IActionResult> Create(PhoneInformationCreateDto phoneInformationCreateDto)
     {
         var response = await _phoneInformationService.CreateAsync(phoneInformationCreateDto);
 

@@ -1,4 +1,6 @@
-﻿namespace YellowPagesUI.Controllers
+﻿using YellowPages.Shared.Models;
+
+namespace YellowPagesUI.Controllers
 {
     public class HomeController : Microsoft.AspNetCore.Mvc.Controller
     {
@@ -25,7 +27,7 @@
                 return RedirectToAction(nameof(AuthController.Logout), "Auth");
             }
 
-            return View(new Models.ErrorViewModel { RequestId = System.Diagnostics.Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorViewModel { RequestId = System.Diagnostics.Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

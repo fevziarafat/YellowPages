@@ -1,8 +1,11 @@
 ﻿
 
+using YellowPages.Shared.Models;
+using YellowPagesUI.Services.Interfaces;
+
 namespace YellowPagesUI.Services
 {
-    public class UserService : YellowPagesUI.Services.Interfaces.IUserService
+    public class UserService : IUserService
     {
         private readonly HttpClient _client;
 
@@ -11,9 +14,9 @@ namespace YellowPagesUI.Services
             _client = client;
         }
 
-        public async Task<YellowPagesUI.Models.UserViewModel> GetUser()
+        public async Task<UserViewModel> GetUser()
         {
-            return await _client.GetFromJsonAsync<YellowPagesUI.Models.UserViewModel>("/api/user/getuser");
+            return await _client.GetFromJsonAsync<UserViewModel>("/api/user/getuser");
         }
     }
 }

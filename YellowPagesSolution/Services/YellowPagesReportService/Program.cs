@@ -1,12 +1,14 @@
 
 using MassTransit;
+using YellowPagesReportService.Business.Abstract;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services
-    .AddScoped<YellowPagesReportService.Services.IYellowPagesReportService,
-        YellowPagesReportService.Services.YellowPagesReportService>();
+    .AddScoped<IYellowPagesReportService,
+        YellowPagesReportService.Business.Concrete.YellowPagesReportService>();
 builder.Services.AddControllers(
     opt => { opt.Filters.Add(new Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter()); }
 );

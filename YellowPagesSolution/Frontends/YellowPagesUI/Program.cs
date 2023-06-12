@@ -2,14 +2,17 @@
 
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.Configuration;
+using YellowPages.Shared.Models;
 using YellowPages.Shared.Services;
+using YellowPagesUI.Business.Abstract;
+using YellowPagesUI.Business.Concrete;
 using YellowPagesUI.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services
-    .AddScoped<YellowPagesUI.Services.IEMailInformationService,
-       YellowPagesUI.Services.EMailInformationService>();
-builder.Services.AddScoped<YellowPagesUI.Services.IYellowPagesService, YellowPagesUI.Services.YellowPagesService>();
+    .AddScoped<IEMailInformationService,
+       EMailInformationService>();
+builder.Services.AddScoped<IYellowPagesService, YellowPagesService>();
 //builder.Services
 //    .AddScoped<ILocationInformationService, LocationInformationService>();
 //builder.Services
@@ -17,17 +20,17 @@ builder.Services.AddScoped<YellowPagesUI.Services.IYellowPagesService, YellowPag
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ISharedIdentityService, SharedIdentityService>();
-builder.Services.Configure<YellowPagesUI.Models.ClientSettings>(
+builder.Services.Configure<ClientSettings>(
     builder.Configuration.GetSection("ClientSettings"));
 
 
-builder.Services.AddScoped<YellowPagesUI.Services.Interfaces.IIdentityService, YellowPagesUI.Services.IdentityService>();
+builder.Services.AddScoped<IIdentityService, IdentityService>();
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddAccessTokenManagement();
 
 
-builder.Services.Configure<YellowPagesUI.Services.ServiceApiSettings>(builder.Configuration.GetSection("ServiceApiSettings"));
+builder.Services.Configure<ServiceApiSettings>(builder.Configuration.GetSection("ServiceApiSettings"));
 
 builder.Services.AddScoped<YellowPagesUI.Handler.ResourceOwnerPasswordTokenHandler>();
 builder.Services.AddScoped<YellowPagesUI.Handler.ClientCredentialTokenHandler>();
