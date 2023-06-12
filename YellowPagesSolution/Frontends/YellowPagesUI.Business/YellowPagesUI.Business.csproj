@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="IdentityModel.AspNetCore" Version="3.0.0" />
+	  <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="6.10.0" />
+	  <ProjectReference Include="..\..\Shared\YellowPages.Shared\YellowPages.Shared\YellowPages.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

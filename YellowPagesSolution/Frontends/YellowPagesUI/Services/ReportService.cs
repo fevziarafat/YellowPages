@@ -1,6 +1,6 @@
 ﻿
 
-using YellowPagesUI.Models.Report;
+using YellowPages.Shared.Dtos;
 
 namespace YellowPagesUI.Services
 {
@@ -13,7 +13,7 @@ namespace YellowPagesUI.Services
             _httpClient = httpClient;
         }
 
-        public async Task<List<YellowPagesUI.Models.Report.ReportDto>> GetAllReportAsync()
+        public async Task<List<ReportDto>> GetAllReportAsync()
         {
             var response = await _httpClient.GetAsync("yellowpagesreport/GetAllReport");
 
@@ -22,7 +22,7 @@ namespace YellowPagesUI.Services
                 return null;
             }
 
-            var responseSuccess = await response.Content.ReadFromJsonAsync<YellowPages.Shared.Dtos.Response<List<YellowPagesUI.Models.Report.ReportDto>>>();
+            var responseSuccess = await response.Content.ReadFromJsonAsync<YellowPages.Shared.Dtos.Response<List<ReportDto>>>();
 
             return responseSuccess.Data;
         }

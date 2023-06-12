@@ -1,4 +1,5 @@
 
+using YellowPages.Shared.Models;
 using YellowPagesUI.Extensions;
 
 namespace Contact.Controllers
@@ -15,8 +16,8 @@ namespace Contact.Controllers
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<YellowPagesUI.Models.ClientSettings>(Configuration.GetSection("ClientSettings"));
-            services.Configure<YellowPagesUI.Models.ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
+            services.Configure<ClientSettings>(Configuration.GetSection("ClientSettings"));
+            services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
             services.AddHttpContextAccessor();
             services.AddAccessTokenManagement();
             //services.AddSingleton<PhotoHelper>();

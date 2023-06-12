@@ -1,5 +1,7 @@
 ﻿
 
+using YellowPages.Shared.Dtos;
+
 namespace YellowPagesUI.Services
 {
     public class YellowPagesService : IYellowPagesService
@@ -10,9 +12,9 @@ namespace YellowPagesUI.Services
         {
             _httpClient = httpClient;
         }
-        public async Task<bool> CreateAsync(YellowPagesUI.Models.YellowPages.YellowPagesCreateDto yellowPagesCreateDto)
+        public async Task<bool> CreateAsync(YellowPagesCreateDto yellowPagesCreateDto)
         {
-            var response = await _httpClient.PostAsJsonAsync<YellowPagesUI.Models.YellowPages.YellowPagesCreateDto>("yellowpages", yellowPagesCreateDto)
+            var response = await _httpClient.PostAsJsonAsync<YellowPagesCreateDto>("yellowpages", yellowPagesCreateDto)
                 ;
 
             return response.IsSuccessStatusCode;
@@ -25,7 +27,7 @@ namespace YellowPagesUI.Services
             return response.IsSuccessStatusCode;
         }
 
-        public async Task<List<YellowPagesUI.Models.YellowPages.YellowPagesDto>> GetAllContactAsync()
+        public async Task<List<YellowPagesDto>> GetAllContactAsync()
         {
             var response = await _httpClient.GetAsync("yellowpages");
 
@@ -34,12 +36,12 @@ namespace YellowPagesUI.Services
                 return null;
             }
 
-            var responseSuccess = await response.Content.ReadFromJsonAsync<YellowPages.Shared.Dtos.Response<List<YellowPagesUI.Models.YellowPages.YellowPagesDto>>>();
+            var responseSuccess = await response.Content.ReadFromJsonAsync<YellowPages.Shared.Dtos.Response<List<YellowPagesDto>>>();
 
             return responseSuccess.Data;
         }
 
-        public async Task<YellowPagesUI.Models.YellowPages.YellowPagesDto> GetByIdAsync(string id)
+        public async Task<YellowPagesDto> GetByIdAsync(string id)
         {
 
             var yellowpages = await _httpClient.GetAsync($"yellowpages/GetAllInformationByUserId/{id}");
@@ -53,7 +55,7 @@ namespace YellowPagesUI.Services
             else
             {
 
-                 var response= await yellowpages.Content.ReadFromJsonAsync<YellowPages.Shared.Dtos.Response<YellowPagesUI.Models.YellowPages.YellowPagesDto>>();
+                 var response= await yellowpages.Content.ReadFromJsonAsync<YellowPages.Shared.Dtos.Response<YellowPagesDto>>();
                  return response.Data;
             }
 
@@ -72,7 +74,7 @@ namespace YellowPagesUI.Services
             else
             {
 
-                var response = await yellowpages.Content.ReadFromJsonAsync<YellowPages.Shared.Dtos.Response<YellowPagesUI.Models.YellowPages.YellowPagesDto>>();
+                var response = await yellowpages.Content.ReadFromJsonAsync<YellowPages.Shared.Dtos.Response<YellowPagesDto>>();
                 return true;
             }
 

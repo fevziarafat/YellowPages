@@ -1,9 +1,11 @@
 ﻿
 
+using YellowPages.Shared.Models;
+
 namespace YellowPagesUI.Services.Interfaces
 {
     public interface IUserService
     {
-        Task<YellowPagesUI.Models.UserViewModel> GetUser();
+        Task<UserViewModel> GetUser();
     }
 }

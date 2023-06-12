@@ -7,11 +7,11 @@ using System.Linq;
 using System.Security.Claims;
 using IdentityModel;
 using IdentityServer.Data;
-using IdentityServer.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
+using YellowPages.Shared.Models;
 
 namespace IdentityServer
 {

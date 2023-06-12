@@ -1,5 +1,7 @@
 ﻿
 
+using YellowPages.Shared.Dtos;
+
 namespace YellowPagesUI.Services
 {
     public class EMailInformationService : IEMailInformationService
@@ -10,9 +12,9 @@ namespace YellowPagesUI.Services
         {
             _httpClient = httpClient;
         }
-        public async Task<bool> CreateAsync(YellowPagesUI.Models.EMailInformations.EMailInformationCreateDto eMailInformationCreateDto)
+        public async Task<bool> CreateAsync(EMailInformationCreateDto eMailInformationCreateDto)
         {
-            var response = await _httpClient.PostAsJsonAsync<YellowPagesUI.Models.EMailInformations.EMailInformationCreateDto>("emails", eMailInformationCreateDto);
+            var response = await _httpClient.PostAsJsonAsync<EMailInformationCreateDto>("emails", eMailInformationCreateDto);
 
             return response.IsSuccessStatusCode;
         }
