@@ -2,8 +2,12 @@
 
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.Configuration;
+
+
 using YellowPages.Shared.Models;
 using YellowPages.Shared.Services;
+
+//using Abstract;
 using YellowPagesUI.Business.Abstract;
 using YellowPagesUI.Business.Concrete;
 using YellowPagesUI.Extensions;
@@ -43,7 +47,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     opts.SlidingExpiration = true;
     opts.Cookie.Name = "contactcookie";
 });
-
+//builder.Services.AddSingleton<IYellowPagesReportDal, YellowPagesReportDal>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
