@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-
-namespace YellowPages.Shared.Models
+﻿namespace YellowPages.Entities.Concrete
 {
-    public class YellowPages
+    public class YellowPages:MongoDbEntity
 {
     public YellowPages()
     {

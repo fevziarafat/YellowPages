@@ -49,7 +49,7 @@ namespace YellowPagesUI.Controllers
 
         public async Task<Microsoft.AspNetCore.Mvc.IActionResult> AddEMail()
         {
-            return View();
+            return  View();
         }
 
         [Microsoft.AspNetCore.Mvc.HttpPostAttribute]
