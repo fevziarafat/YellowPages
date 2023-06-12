@@ -1,14 +1,15 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using YellowPagesUI.Business.Abstract;
 
 namespace YellowPagesUI.Handler
 {
     public class ResourceOwnerPasswordTokenHandler : DelegatingHandler
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
-        private readonly YellowPagesUI.Services.Interfaces.IIdentityService _identityService;
+        private readonly IIdentityService _identityService;
         private readonly ILogger<ResourceOwnerPasswordTokenHandler> _logger;
 
-        public ResourceOwnerPasswordTokenHandler(IHttpContextAccessor httpContextAccessor, YellowPagesUI.Services.Interfaces.IIdentityService identityService, ILogger<ResourceOwnerPasswordTokenHandler> logger)
+        public ResourceOwnerPasswordTokenHandler(IHttpContextAccessor httpContextAccessor, IIdentityService identityService, ILogger<ResourceOwnerPasswordTokenHandler> logger)
         {
             _httpContextAccessor = httpContextAccessor;
             _identityService = identityService;

@@ -1,4 +1,6 @@
-﻿@*
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using YellowPages.Shared.Dtos
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -25,12 +27,12 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>@contact.name</td>
-                                    <td>@contact.surName</td>
-                                    <td>@contact.firm</td>
+                                    <td>@contact.Name</td>
+                                    <td>@contact.SurName</td>
+                                    <td>@contact.Firm</td>
                                 </tr>
                                 <tr>
-                                    @if ((@contact.phoneInformations as List<PhoneInformationDto>) != null)
+                                    @if ((@contact.PhoneInformations as List<PhoneInformationDto>) != null)
                                     {
                                     <tr>
                                         <th>Phone</th>
@@ -38,7 +40,7 @@
 
 
                                     </tr>
-                                        @foreach (var item in @contact.phoneInformations as List<PhoneInformationDto>)
+                                        @foreach (var item in @contact.PhoneInformations as List<PhoneInformationDto>)
                                         {
                                         <tr>
                                             <td>@item.Phone</td>

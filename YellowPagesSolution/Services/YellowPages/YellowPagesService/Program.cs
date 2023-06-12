@@ -1,13 +1,15 @@
 using MassTransit;
 using System.ComponentModel;
-using YellowPagesService.Services;
+using YellowPagesService.Business.Abstract;
+using YellowPagesService.Business.Concrete;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<IEMailInformationService, YellowPages.Services.EMailInformationService>();
-builder.Services.AddScoped<IYellowPagesService, YellowPagesService.Services.YellowPagesService>();
-builder.Services.AddScoped<YellowPages.Services.ILocationInformationService, YellowPages.Services.LocationInformationService>();
-builder.Services.AddScoped<YellowPages.Services.IPhoneInformationService, YellowPages.Services.PhoneInformationService>();
+builder.Services.AddScoped<IEMailInformationService, EMailInformationService>();
+builder.Services.AddScoped<IYellowPagesService, YellowPagesService.Business.Concrete.YellowPagesService>();
+builder.Services.AddScoped<ILocationInformationService, LocationInformationService>();
+builder.Services.AddScoped<IPhoneInformationService, PhoneInformationService>();
 
 builder.Services.AddControllers(opt => { opt.Filters.Add(new Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter()); }
 );

@@ -1,10 +1,12 @@
-﻿namespace YellowPagesUI.Handler
+﻿using YellowPagesUI.Business.Abstract;
+
+namespace YellowPagesUI.Handler
 {
     public class ClientCredentialTokenHandler : DelegatingHandler
     {
-        private readonly YellowPagesUI.Services.Interfaces.IClientCredentialTokenService _clientCredentialTokenService;
+        private readonly IClientCredentialTokenService _clientCredentialTokenService;
 
-        public ClientCredentialTokenHandler(YellowPagesUI.Services.Interfaces.IClientCredentialTokenService clientCredentialTokenService)
+        public ClientCredentialTokenHandler(IClientCredentialTokenService clientCredentialTokenService)
         {
             _clientCredentialTokenService = clientCredentialTokenService;
         }

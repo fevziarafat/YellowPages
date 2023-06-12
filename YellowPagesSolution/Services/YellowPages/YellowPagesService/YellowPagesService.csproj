@@ -1,10 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Dtos\**" />
+    <Compile Remove="Models\**" />
+    <Compile Remove="Services\**" />
+    <Content Remove="Dtos\**" />
+    <Content Remove="Models\**" />
+    <Content Remove="Services\**" />
+    <EmbeddedResource Remove="Dtos\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <None Remove="Dtos\**" />
+    <None Remove="Models\**" />
+    <None Remove="Services\**" />
+  </ItemGroup>
 
 
   <ItemGroup>
@@ -18,8 +33,15 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\yellowpageprivate\YellowPagesSolution\Services\YellowPagesReportService.Business\YellowPagesReportService.Business.csproj" />
+    <ProjectReference Include="..\..\..\..\..\yellowpageprivate\YellowPagesSolution\Services\YellowPagesService.Business\YellowPagesService.Business.csproj" />
     <ProjectReference Include="..\..\..\Shared\YellowPages.Shared\YellowPages.Shared\YellowPages.Shared.csproj" />
   </ItemGroup>
+
+
+
+
 
 </Project>

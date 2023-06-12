@@ -1,19 +1,17 @@
-﻿
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using IdentityModel;
 using IdentityServer4.Validation;
 using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using YellowPages.Shared.Models;
 
-namespace IdentityServerForContact.Services
+namespace IdentityServer.Services
 {
     public class IdentityResourceOwnerPasswordValidator : IResourceOwnerPasswordValidator
     {
-        private readonly UserManager<IdentityServer.Models.ApplicationUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public IdentityResourceOwnerPasswordValidator(UserManager<IdentityServer.Models.ApplicationUser> userManager)
+        public IdentityResourceOwnerPasswordValidator(UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;
         }

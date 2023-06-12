@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using IdentityServerForContact.Dtos;
+
 
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 using IdentityServer4.Hosting.LocalApiAuthentication;
 using System.IdentityModel.Tokens.Jwt;
 using YellowPages.Shared.Dtos;
+using YellowPages.Shared.Models;
 
 namespace IdentityServer.Controllers
 {
@@ -18,16 +19,16 @@ namespace IdentityServer.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly UserManager<Models.ApplicationUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public UserController(UserManager<Models.ApplicationUser> userManager)
+        public UserController(UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;
         }
         [HttpPost]
         public async Task<IActionResult> SignUp(SignupDto signupDto)
         {
-            var user = new Models.ApplicationUser
+            var user = new ApplicationUser
             {
                 UserName = signupDto.UserName,
                 Email = signupDto.Email,

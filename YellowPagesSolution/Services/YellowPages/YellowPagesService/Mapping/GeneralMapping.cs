@@ -1,29 +1,32 @@
-﻿namespace YellowPagesService.Mapping;
+﻿using YellowPages.Shared.Dtos;
+using YellowPages.Shared.Models;
+
+namespace YellowPagesService.Mapping;
 
 public class GeneralMapping : AutoMapper.Profile
 {
     public GeneralMapping()
     {
-        CreateMap<YellowPagesService.Models.YellowPages, YellowPagesService.Dtos.YellowPagesDto>()
+        CreateMap<YellowPages.Shared.Models.YellowPages, YellowPagesDto>()
             .ForMember(dest => dest.EMailInformations, opt => opt.MapFrom(src => src.EMailInformation))
             .ForMember(dest => dest.PhoneInformations, opt => opt.MapFrom(src => src.PhoneInformation))
             .ForMember(dest => dest.LocationInformations, opt => opt.MapFrom(src => src.LocationInformation))
             .ReverseMap();
 
-        CreateMap<YellowPagesService.Models.YellowPages, YellowPagesService.Dtos.YellowPagesCreateDto>().ReverseMap();
+        CreateMap<YellowPages.Shared.Models.YellowPages, YellowPagesCreateDto>().ReverseMap();
 
-        CreateMap<YellowPagesService.Models.EMailInformation, YellowPagesService.Dtos.EMailInformationDto>().ReverseMap();
-        CreateMap<YellowPagesService.Models.EMailInformation, YellowPagesService.Dtos.EMailInformationCreateDto>()
+        CreateMap<EMailInformation, EMailInformationDto>().ReverseMap();
+        CreateMap<EMailInformation, EMailInformationCreateDto>()
             .ReverseMap();
 
-        CreateMap<YellowPagesService.Models.LocationInformation, YellowPagesService.Dtos.LocationInformationDto>()
+        CreateMap<LocationInformation, LocationInformationDto>()
             .ReverseMap();
-        CreateMap<YellowPagesService.Models.LocationInformation, YellowPagesService.Dtos.LocationInformationCreateDto>()
+        CreateMap<LocationInformation, LocationInformationCreateDto>()
             .ReverseMap
                 ();
 
-        CreateMap<YellowPagesService.Models.PhoneInformation, YellowPagesService.Dtos.PhoneInformationDto>().ReverseMap();
-        CreateMap<YellowPagesService.Models.PhoneInformation, YellowPagesService.Dtos.PhoneInformationCreateDto>()
+        CreateMap<PhoneInformation, PhoneInformationDto>().ReverseMap();
+        CreateMap<PhoneInformation, PhoneInformationCreateDto>()
             .ReverseMap();
     }
 }

@@ -1,5 +1,7 @@
 ﻿
 
+using YellowPages.Shared.Dtos;
+
 namespace YellowPagesUI.Services
 {
     public class LocationInformationService : ILocationInformationService
@@ -10,9 +12,9 @@ namespace YellowPagesUI.Services
         {
             _httpClient = httpClient;
         }
-        public async Task<bool> CreateAsync(YellowPagesUI.Models.LocationInformation.LocationInformationCreateDto locationInformationCreateDto)
+        public async Task<bool> CreateAsync(LocationInformationCreateDto locationInformationCreateDto)
         {
-            var response = await _httpClient.PostAsJsonAsync<YellowPagesUI.Models.LocationInformation.LocationInformationCreateDto>("locations", locationInformationCreateDto);
+            var response = await _httpClient.PostAsJsonAsync<LocationInformationCreateDto>("locations", locationInformationCreateDto);
 
             return response.IsSuccessStatusCode;
         }
