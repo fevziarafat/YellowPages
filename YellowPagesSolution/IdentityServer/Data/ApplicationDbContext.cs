@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using IdentityServer.Models;
+using YellowPages.Shared.Models;
 
 namespace IdentityServer.Data
 {

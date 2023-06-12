@@ -28,7 +28,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGateway", "Gateways\WebG
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{D59E6FBB-8100-4F73-AE87-297A98912F63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YellowPagesUI", "Frontends\YellowPagesUI\YellowPagesUI.csproj", "{44C49BEC-7E49-48AC-90BC-77139177D7AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YellowPagesUI", "Frontends\YellowPagesUI\YellowPagesUI.csproj", "{44C49BEC-7E49-48AC-90BC-77139177D7AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YellowPagesUI.Business", "..\..\yellowpageprivate\YellowPagesSolution\Frontends\YellowPagesUI.Business\YellowPagesUI.Business.csproj", "{7EB49FF3-E951-43DD-B782-7F279D6F3EBF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YellowPagesReportService.Business", "..\..\yellowpageprivate\YellowPagesSolution\Services\YellowPagesReportService.Business\YellowPagesReportService.Business.csproj", "{AF05454F-370E-4BC3-B7EB-ED293A41C12E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YellowPagesReportService.Data", "..\..\yellowpageprivate\YellowPagesSolution\Services\YellowPagesReportService.Data\YellowPagesReportService.Data.csproj", "{1F5BF293-9FFA-4DC2-A8E7-6D5D16CBEEE8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YellowPagesReportService.Entities", "..\..\yellowpageprivate\YellowPagesSolution\Services\YellowPagesReportService.Entities\YellowPagesReportService.Entities.csproj", "{1E6E3DAA-4E01-4CFD-B050-72011C48B2E0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YellowPagesService.Business", "..\..\yellowpageprivate\YellowPagesSolution\Services\YellowPagesService.Business\YellowPagesService.Business.csproj", "{429E693E-17A0-4EF0-8935-7E75BD40E541}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YellowPagesService.Data", "..\..\yellowpageprivate\YellowPagesSolution\Services\YellowPagesService.Data\YellowPagesService.Data.csproj", "{417B0938-E9F4-452B-933C-CC6DAD66D1C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YellowPagesService.Entities", "..\..\yellowpageprivate\YellowPagesSolution\Services\YellowPagesService.Entities\YellowPagesService.Entities.csproj", "{4EA7F2EB-2B0C-4805-93F9-7E6CBEC5C9D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +74,34 @@ Global
 		{44C49BEC-7E49-48AC-90BC-77139177D7AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44C49BEC-7E49-48AC-90BC-77139177D7AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44C49BEC-7E49-48AC-90BC-77139177D7AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EB49FF3-E951-43DD-B782-7F279D6F3EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EB49FF3-E951-43DD-B782-7F279D6F3EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EB49FF3-E951-43DD-B782-7F279D6F3EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EB49FF3-E951-43DD-B782-7F279D6F3EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF05454F-370E-4BC3-B7EB-ED293A41C12E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF05454F-370E-4BC3-B7EB-ED293A41C12E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF05454F-370E-4BC3-B7EB-ED293A41C12E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF05454F-370E-4BC3-B7EB-ED293A41C12E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F5BF293-9FFA-4DC2-A8E7-6D5D16CBEEE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F5BF293-9FFA-4DC2-A8E7-6D5D16CBEEE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F5BF293-9FFA-4DC2-A8E7-6D5D16CBEEE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F5BF293-9FFA-4DC2-A8E7-6D5D16CBEEE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E6E3DAA-4E01-4CFD-B050-72011C48B2E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E6E3DAA-4E01-4CFD-B050-72011C48B2E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E6E3DAA-4E01-4CFD-B050-72011C48B2E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E6E3DAA-4E01-4CFD-B050-72011C48B2E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{429E693E-17A0-4EF0-8935-7E75BD40E541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{429E693E-17A0-4EF0-8935-7E75BD40E541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{429E693E-17A0-4EF0-8935-7E75BD40E541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{429E693E-17A0-4EF0-8935-7E75BD40E541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{417B0938-E9F4-452B-933C-CC6DAD66D1C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{417B0938-E9F4-452B-933C-CC6DAD66D1C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{417B0938-E9F4-452B-933C-CC6DAD66D1C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{417B0938-E9F4-452B-933C-CC6DAD66D1C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EA7F2EB-2B0C-4805-93F9-7E6CBEC5C9D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EA7F2EB-2B0C-4805-93F9-7E6CBEC5C9D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EA7F2EB-2B0C-4805-93F9-7E6CBEC5C9D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EA7F2EB-2B0C-4805-93F9-7E6CBEC5C9D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +113,13 @@ Global
 		{797D9E59-1483-4B25-9449-E61812AB3BA2} = {8A0E88AF-D1F1-4FD8-BE31-CBC220962AB3}
 		{D59E6FBB-8100-4F73-AE87-297A98912F63} = {0B880F5D-2EC2-42D3-9BE8-A4013CB15566}
 		{44C49BEC-7E49-48AC-90BC-77139177D7AA} = {369555E1-828E-41FA-AB08-E3DD07ED06CA}
+		{7EB49FF3-E951-43DD-B782-7F279D6F3EBF} = {369555E1-828E-41FA-AB08-E3DD07ED06CA}
+		{AF05454F-370E-4BC3-B7EB-ED293A41C12E} = {4A7E1F66-E6D5-4913-AE25-FADEF2DD7334}
+		{1F5BF293-9FFA-4DC2-A8E7-6D5D16CBEEE8} = {4A7E1F66-E6D5-4913-AE25-FADEF2DD7334}
+		{1E6E3DAA-4E01-4CFD-B050-72011C48B2E0} = {4A7E1F66-E6D5-4913-AE25-FADEF2DD7334}
+		{429E693E-17A0-4EF0-8935-7E75BD40E541} = {4A7E1F66-E6D5-4913-AE25-FADEF2DD7334}
+		{417B0938-E9F4-452B-933C-CC6DAD66D1C7} = {4A7E1F66-E6D5-4913-AE25-FADEF2DD7334}
+		{4EA7F2EB-2B0C-4805-93F9-7E6CBEC5C9D6} = {4A7E1F66-E6D5-4913-AE25-FADEF2DD7334}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BBAFB75-FBCE-4CF5-85D3-07AE41E4A6A3}

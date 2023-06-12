@@ -2,17 +2,19 @@
 using IdentityModel.Client;
 using Microsoft.AspNetCore.Authentication;
 using System.Text.Json;
+using YellowPages.Shared.Models;
+using YellowPagesUI.Services.Interfaces;
 
 namespace YellowPagesUI.Services
 {
-    public class IdentityService : YellowPagesUI.Services.Interfaces.IIdentityService
+    public class IdentityService : IIdentityService
     {
         private readonly HttpClient _httpClient;
         private readonly IHttpContextAccessor _httpContextAccessor;
-        private readonly YellowPagesUI.Models.ClientSettings _clientSettings;
+        private readonly ClientSettings _clientSettings;
         private readonly ServiceApiSettings _serviceApiSettings;
 
-        public IdentityService(HttpClient client, IHttpContextAccessor httpContextAccessor, Microsoft.Extensions.Options.IOptions<YellowPagesUI.Models.ClientSettings> clientSettings, Microsoft.Extensions.Options.IOptions<ServiceApiSettings> serviceApiSettings)
+        public IdentityService(HttpClient client, IHttpContextAccessor httpContextAccessor, Microsoft.Extensions.Options.IOptions<ClientSettings> clientSettings, Microsoft.Extensions.Options.IOptions<ServiceApiSettings> serviceApiSettings)
         {
             _httpClient = client;
             _httpContextAccessor = httpContextAccessor;
@@ -94,7 +96,7 @@ namespace YellowPagesUI.Services
             await _httpClient.RevokeTokenAsync(tokenRevocationRequest);
         }
 
-        public async Task<YellowPages.Shared.Dtos.Response<bool>> SignIn(YellowPagesUI.Models.SigninInput signinInput)
+        public async Task<YellowPages.Shared.Dtos.Response<bool>> SignIn(SigninInput signinInput)
         {
             var disco = await _httpClient.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
             {

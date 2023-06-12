@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using YellowPages.Shared.ControllerBase;
 using YellowPages.Shared.Dtos;
 using YellowPages.Shared.Messages;
+using YellowPagesService.Business.Abstract;
 
 namespace YellowPagesService.Controllers;
 
@@ -11,9 +12,9 @@ namespace YellowPagesService.Controllers;
 public class YellowPagesController : CustomBaseController
 {
     private readonly ISendEndpointProvider _sendEndpointProvider;
-    private readonly YellowPagesService.Services.IYellowPagesService _yellowPagesService;
+    private readonly IYellowPagesService _yellowPagesService;
 
-    public YellowPagesController(YellowPagesService.Services.IYellowPagesService yellowPagesService, ISendEndpointProvider sendEndpointProvider)
+    public YellowPagesController(IYellowPagesService yellowPagesService, ISendEndpointProvider sendEndpointProvider)
     {
         _yellowPagesService = yellowPagesService;
         _sendEndpointProvider = sendEndpointProvider;
@@ -24,6 +25,9 @@ public class YellowPagesController : CustomBaseController
     public async Task<IActionResult> GetAll()
     {
         var response = await _yellowPagesService.GetAllAsync();
+
+
+        var a = response;
 
         return CreateActionResultInstance(response);
     }
@@ -40,7 +44,7 @@ public class YellowPagesController : CustomBaseController
 
     [HttpPost]
     public async Task<IActionResult> Create(
-        YellowPagesService.Dtos.YellowPagesCreateDto yellowPagesCreateDto)
+        YellowPagesCreateDto yellowPagesCreateDto)
     {
         var response = await _yellowPagesService.CreateAsync(yellowPagesCreateDto);
 

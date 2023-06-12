@@ -1,5 +1,7 @@
 ﻿
 
+using YellowPages.Shared.Dtos;
+
 namespace YellowPagesUI.Services
 {
     public class PhoneInformationService : IPhoneInformationService
@@ -10,9 +12,9 @@ namespace YellowPagesUI.Services
         {
             _httpClient = httpClient;
         }
-        public async Task<bool> CreateAsync(YellowPagesUI.Models.PhoneInformation.PhoneInformationCreateDto phoneInformationCreateDto)
+        public async Task<bool> CreateAsync(PhoneInformationCreateDto phoneInformationCreateDto)
         {
-            var response = await _httpClient.PostAsJsonAsync<YellowPagesUI.Models.PhoneInformation.PhoneInformationCreateDto>("phones", phoneInformationCreateDto);
+            var response = await _httpClient.PostAsJsonAsync<PhoneInformationCreateDto>("phones", phoneInformationCreateDto);
 
             return response.IsSuccessStatusCode;
         }

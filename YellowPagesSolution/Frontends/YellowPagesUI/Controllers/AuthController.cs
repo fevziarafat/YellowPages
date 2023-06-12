@@ -1,12 +1,15 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using YellowPages.Shared.Models;
+using YellowPagesUI.Business.Abstract;
+using YellowPagesUI.Business.Concrete;
 
 namespace YellowPagesUI.Controllers
 {
     public class AuthController : Microsoft.AspNetCore.Mvc.Controller
     {
-        private readonly Services.Interfaces.IIdentityService _identityService;
+        private readonly IIdentityService _identityService;
 
-        public AuthController(Services.Interfaces.IIdentityService identityService)
+        public AuthController(IIdentityService identityService)
         {
             _identityService = identityService;
         }
@@ -17,7 +20,7 @@ namespace YellowPagesUI.Controllers
         }
 
         [Microsoft.AspNetCore.Mvc.HttpPostAttribute]
-        public async Task<Microsoft.AspNetCore.Mvc.IActionResult> SignIn(Models.SigninInput signinInput)
+        public async Task<Microsoft.AspNetCore.Mvc.IActionResult> SignIn(SigninInput signinInput)
         {
             if (!ModelState.IsValid)
             {

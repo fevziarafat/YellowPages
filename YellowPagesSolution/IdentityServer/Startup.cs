@@ -3,11 +3,8 @@
 
 
 using IdentityServer.Data;
-using IdentityServer.Models;
-using IdentityServer;
+using IdentityServer.Services;
 using IdentityServer4;
-
-using IdentityServerForContact.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -15,8 +12,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using YellowPages.Shared.Models;
 
-namespace IdentityServerForContact
+namespace IdentityServer
 {
     public class Startup
     {

@@ -8,15 +8,15 @@ using IdentityServer4;
 using IdentityServer4.Events;
 using IdentityServer4.Services;
 using IdentityServer4.Stores;
-using IdentityServer.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using YellowPages.Shared.Models;
 
-namespace IdentityServerHost.Quickstart.UI
+namespace IdentityServer.Quickstart.Account
 {
     [SecurityHeaders]
     [AllowAnonymous]

@@ -1,13 +1,19 @@
-﻿namespace YellowPagesReportService.Controllers;
+﻿
+
+
+
+using YellowPagesReportService.Business.Abstract;
+
+namespace YellowPagesReportService.Controllers;
 
 [Microsoft.AspNetCore.Mvc.RouteAttribute("api/[controller]")]
 [Microsoft.AspNetCore.Mvc.ApiControllerAttribute]
 public class YellowPagesReportController : YellowPages.Shared.ControllerBase.CustomBaseController
 {
-    private readonly YellowPagesReportService.Services.IYellowPagesReportService _yellowPagesReportService;
+    private readonly IYellowPagesReportService _yellowPagesReportService;
 
     public YellowPagesReportController(
-        YellowPagesReportService.Services.IYellowPagesReportService yellowPagesReportService)
+      IYellowPagesReportService yellowPagesReportService)
     {
         _yellowPagesReportService = yellowPagesReportService;
     }

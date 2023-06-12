@@ -1,6 +1,7 @@
 ﻿
 
 using IdentityModel.Client;
+using YellowPages.Shared.Models;
 
 namespace YellowPagesUI.Services
 {
@@ -9,11 +10,11 @@ namespace YellowPagesUI.Services
     public class ClientCredentialTokenService : YellowPagesUI.Services.Interfaces.IClientCredentialTokenService
     {
         private readonly ServiceApiSettings _serviceApiSettings;
-        private readonly YellowPagesUI.Models.ClientSettings _clientSettings;
+        private readonly ClientSettings _clientSettings;
         private readonly IdentityModel.AspNetCore.AccessTokenManagement.IClientAccessTokenCache _clientAccessTokenCache;
         private readonly HttpClient _httpClient;
 
-        public ClientCredentialTokenService(Microsoft.Extensions.Options.IOptions<ServiceApiSettings> serviceApiSettings, Microsoft.Extensions.Options.IOptions<YellowPagesUI.Models.ClientSettings> clientSettings, IdentityModel.AspNetCore.AccessTokenManagement.IClientAccessTokenCache clientAccessTokenCache, HttpClient httpClient)
+        public ClientCredentialTokenService(Microsoft.Extensions.Options.IOptions<ServiceApiSettings> serviceApiSettings, Microsoft.Extensions.Options.IOptions<ClientSettings> clientSettings, IdentityModel.AspNetCore.AccessTokenManagement.IClientAccessTokenCache clientAccessTokenCache, HttpClient httpClient)
         {
             _serviceApiSettings = serviceApiSettings.Value;
             _clientSettings = clientSettings.Value;
