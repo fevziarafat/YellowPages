@@ -1,10 +1,17 @@
 
 using MassTransit;
+using YellowPages.Data.Abstract;
+using YellowPages.Data.Concrete;
 using YellowPagesReportService.Business.Abstract;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddSingleton<IYellowPagesReportDal, YellowPagesReportDal>();
+builder.Services.AddSingleton<IYellowPagesDal, YellowPagesDal>();
+builder.Services.AddSingleton<IEMailInformationDal, EMailInformationDal>();
+builder.Services.AddSingleton<IPhoneInformationDal, PhoneInformationDal>();
+builder.Services.AddSingleton<ILocationInformationDal, LocationInformationDal>();
 // Add services to the container.
 builder.Services
     .AddScoped<IYellowPagesReportService,
@@ -26,6 +33,10 @@ builder.Services.AddSingleton<YellowPages.Shared.Settings.IDatabaseSettings>(sp 
         .GetRequiredService<Microsoft.Extensions.Options.IOptions<YellowPages.Shared.Settings.DatabaseSettings>>()
         .Value;
 });
+
+
+
+
 
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);

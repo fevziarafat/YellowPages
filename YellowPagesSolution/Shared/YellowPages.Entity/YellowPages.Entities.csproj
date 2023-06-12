@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Abstract\IEntity.cs" />
+    <Compile Remove="Concrete\EMailInformation.cs" />
+    <Compile Remove="Concrete\LocationInformation.cs" />
+    <Compile Remove="Concrete\MongoDbEntity.cs" />
+    <Compile Remove="Concrete\PhoneInformation.cs" />
+    <Compile Remove="Concrete\YellowPages.cs" />
+    <Compile Remove="Concrete\YellowPagesReport.cs" />
+  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="MongoDB.Driver" Version="2.19.2" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Abstract\" />
+	  <Folder Include="Concrete\" />
+	</ItemGroup>
+</Project>

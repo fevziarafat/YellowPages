@@ -93,8 +93,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\yellowpageprivate\YellowPagesSolution\Frontends\YellowPagesUI.Business\YellowPagesUI.Business.csproj" />
-    <ProjectReference Include="..\..\Shared\YellowPages.Shared\YellowPages.Shared\YellowPages.Shared.csproj" />
   </ItemGroup>
+
+
 
 
 </Project>
