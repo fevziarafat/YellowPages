@@ -8,15 +8,19 @@
 
   <ItemGroup>
     <Compile Remove="Dtos\**" />
+    <Compile Remove="Extensions\**" />
     <Compile Remove="Models\**" />
     <Compile Remove="Services\**" />
     <Content Remove="Dtos\**" />
+    <Content Remove="Extensions\**" />
     <Content Remove="Models\**" />
     <Content Remove="Services\**" />
     <EmbeddedResource Remove="Dtos\**" />
+    <EmbeddedResource Remove="Extensions\**" />
     <EmbeddedResource Remove="Models\**" />
     <EmbeddedResource Remove="Services\**" />
     <None Remove="Dtos\**" />
+    <None Remove="Extensions\**" />
     <None Remove="Models\**" />
     <None Remove="Services\**" />
   </ItemGroup>
@@ -38,7 +42,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\yellowpageprivate\YellowPagesSolution\Services\YellowPagesReportService.Business\YellowPagesReportService.Business.csproj" />
-    <ProjectReference Include="..\..\Shared\YellowPages.Shared\YellowPages.Shared\YellowPages.Shared.csproj" />
   </ItemGroup>
 
 
