@@ -41,7 +41,7 @@ public class YellowPagesReportController : YellowPages.Shared.ControllerBase.Cus
     [Microsoft.AspNetCore.Mvc.RouteAttribute("/api/[controller]/ReportById/{id}")]
     public async Task<Microsoft.AspNetCore.Mvc.IActionResult> GetReportById(string id)
     {
-        var response = await _yellowPagesReportService.CreateAsync(id);
+        var response = await _yellowPagesReportService.GetReportByIdAsync(id);
 
         return CreateActionResultInstance(response);
     }
