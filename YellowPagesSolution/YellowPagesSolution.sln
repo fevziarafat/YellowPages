@@ -38,6 +38,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YellowPages.Data", "Shared\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YellowPagesUI", "Frontends\YellowPagesUI\YellowPagesUI.csproj", "{8244342D-4D2D-4E23-B436-E00A50158682}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{CDABCFE6-6E78-45E1-BC34-B0FBDC8F2399}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YellowPageUI.Test", "Test\YellowPageUI.Test\YellowPageUI.Test.csproj", "{6CD7C332-8250-4A99-949E-EF21E6A7C1E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -84,6 +88,10 @@ Global
 		{8244342D-4D2D-4E23-B436-E00A50158682}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8244342D-4D2D-4E23-B436-E00A50158682}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8244342D-4D2D-4E23-B436-E00A50158682}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CD7C332-8250-4A99-949E-EF21E6A7C1E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CD7C332-8250-4A99-949E-EF21E6A7C1E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CD7C332-8250-4A99-949E-EF21E6A7C1E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CD7C332-8250-4A99-949E-EF21E6A7C1E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,6 +107,7 @@ Global
 		{429E693E-17A0-4EF0-8935-7E75BD40E541} = {4A7E1F66-E6D5-4913-AE25-FADEF2DD7334}
 		{F4F1119C-289D-42D0-8C48-EF7EE177C6D4} = {FC695E01-EFBC-4D2F-8FAC-3A3DCA40CC21}
 		{8244342D-4D2D-4E23-B436-E00A50158682} = {369555E1-828E-41FA-AB08-E3DD07ED06CA}
+		{6CD7C332-8250-4A99-949E-EF21E6A7C1E3} = {CDABCFE6-6E78-45E1-BC34-B0FBDC8F2399}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BBAFB75-FBCE-4CF5-85D3-07AE41E4A6A3}
