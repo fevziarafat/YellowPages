@@ -18,7 +18,7 @@ namespace YellowPages.Data.Concrete
     {
         protected readonly IMongoCollection<T> Collection;
         private readonly IDatabaseSettings settings;
-        //private readonly IMongoDatabase db;
+      
        
 
         protected MongoDbRepositoryBase(IOptions<DatabaseSettings> options)

@@ -4,8 +4,8 @@ namespace YellowPagesService.Business.Abstract;
 
 public interface IPhoneInformationService
 {
-    Task<YellowPages.Shared.Dtos.Response<PhoneInformationDto>> CreateAsync(
+    Task<Response<PhoneInformationDto>> CreateAsync(
         PhoneInformationCreateDto phoneInformationCreateDto);
 
-    Task<YellowPages.Shared.Dtos.Response<YellowPages.Shared.Dtos.NoContent>> DeleteAsync(string id);
+    Task<Response<NoContent>> DeleteAsync(string id);
 }

@@ -14,7 +14,6 @@ namespace YellowPagesUI.Controllers
         public async Task<Microsoft.AspNetCore.Mvc.IActionResult> Index()
         {
             return View();
-            //return View(await _catalogService.GetAllCourseAsync());
         }
 
         [Microsoft.AspNetCore.Mvc.ResponseCacheAttribute(Duration = 0, Location = Microsoft.AspNetCore.Mvc.ResponseCacheLocation.None, NoStore = true)]

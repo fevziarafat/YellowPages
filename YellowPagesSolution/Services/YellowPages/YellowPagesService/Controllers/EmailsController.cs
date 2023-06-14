@@ -1,12 +1,13 @@
-﻿using YellowPages.Shared.Dtos;
-
+﻿using Microsoft.AspNetCore.Mvc;
+using YellowPages.Shared.ControllerBase;
+using YellowPages.Shared.Dtos;
 using YellowPagesService.Business.Abstract;
 
 namespace YellowPagesService.Controllers;
 
-[Microsoft.AspNetCore.Mvc.Route("api/[controller]")]
-[Microsoft.AspNetCore.Mvc.ApiController]
-public class EmailsController : YellowPages.Shared.ControllerBase.CustomBaseController
+[Route("api/[controller]")]
+[ApiController]
+public class EmailsController : CustomBaseController
 {
     private readonly IEMailInformationService _eMailInformationService;
 
@@ -16,8 +17,8 @@ public class EmailsController : YellowPages.Shared.ControllerBase.CustomBaseCont
     }
 
 
-    [Microsoft.AspNetCore.Mvc.HttpPost]
-    public async Task<Microsoft.AspNetCore.Mvc.IActionResult> Create(
+    [HttpPost]
+    public async Task<IActionResult> Create(
         EMailInformationCreateDto eMailInformationCreateDto)
     {
         var response = await _eMailInformationService.CreateAsync(eMailInformationCreateDto);
@@ -26,8 +27,8 @@ public class EmailsController : YellowPages.Shared.ControllerBase.CustomBaseCont
     }
 
 
-    [Microsoft.AspNetCore.Mvc.HttpDelete("{id}")]
-    public async Task<Microsoft.AspNetCore.Mvc.IActionResult> Delete(string id)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(string id)
     {
         var response = await _eMailInformationService.DeleteAsync(id);
 
