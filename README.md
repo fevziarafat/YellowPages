@@ -17,7 +17,8 @@ getirebilir
 
 # Kurulum
 
-Projede Docker sistemi kullanıldığı için bilgisayarınızda Docker ın yüklü olması gerekmektedir.
+Proje Mikroservice Mimarisi ile oluşturulmuştur.
+Databaseler ve RabbirMQ Docker sistemi üzerinden ayağa kaldırılmıştır. Bilgisayarınızda Docker ın yüklü olması gerekmektedir.
 
 Docker kurulumu için [https://www.docker.com/ ](https://www.docker.com/) sayfasını ziyaret edebilirsiniz
 Docker ı kurduktan sonra bilgisayarınızda olması gereken Containerlar ve kurulum için gereklı komutları aşağıdadır
