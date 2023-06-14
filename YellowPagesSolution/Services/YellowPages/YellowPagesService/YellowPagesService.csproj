@@ -35,9 +35,12 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\yellowpageprivate\YellowPagesSolution\Services\YellowPagesService.Business\YellowPagesService.Business.csproj" />
-    <ProjectReference Include="..\..\..\Shared\YellowPages.Shared\YellowPages.Shared\YellowPages.Shared.csproj" />
+    <ProjectReference Include="..\..\..\Shared\YellowPages.Data\YellowPages.Data.csproj" />
+    <ProjectReference Include="..\..\YellowPagesService.Business\YellowPagesService.Business.csproj" />
   </ItemGroup>
+
+
+
 
 
 

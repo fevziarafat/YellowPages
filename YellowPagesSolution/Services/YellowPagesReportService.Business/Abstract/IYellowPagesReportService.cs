@@ -11,6 +11,7 @@ public interface IYellowPagesReportService
         string locationName);
     Task<YellowPages.Shared.Dtos.Response<List<YellowPagesReportDto>>> GetAllAsync();
 
-    Task<YellowPages.Shared.Dtos.Response<List<YellowPagesReportDto>>> GetReportByIdAsync(string id);
+    //Task<YellowPages.Shared.Dtos.Response<List<YellowPagesReportDto>>> GetReportByIdAsync(string id);
 
+    Task<YellowPages.Shared.Dtos.Response<YellowPagesReportDto>> GetReportByIdAsync(string id);
 }
