@@ -22,7 +22,32 @@ namespace YellowPageUI.Test
             _client = new Mock<HttpClient>();
         }
 
-       
+        //[Fact]
+        //public async Task GetUser_Returns_UserViewModel()
+        //{
+
+        //    var expectedUser = new UserViewModel
+        //    {
+        //        Email = "a@a.com",
+        //        City = "Çorum",
+        //        Id = "1",
+        //        UserName = "Fevzi"
+        //    };
+
+        //    _client.Setup(a => a.GetFromJsonAsync<UserViewModel>("/api/user/getuser"))
+        //        .ReturnsAsync(expectedUser);
+
+        //    var userService = new UserService(_client.Object);
+
+        //    // Act
+        //    var result = await userService.GetUser();
+
+        //    // Assert
+        //    Assert.NotNull(result);
+        //    Assert.Equal(expectedUser.Id, result.Id);
+        //    Assert.Equal(expectedUser.UserName, result.UserName);
+        //    // Assert other properties as needed
+        //}
     }
 
 

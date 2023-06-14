@@ -8,7 +8,11 @@
 
   <ItemGroup>
 	  <PackageReference Include="AutoMapper" Version="10.1.1" />
-	  <ProjectReference Include="..\..\Shared\YellowPages.Shared\YellowPages.Shared\YellowPages.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\YellowPages.Data\YellowPages.Data.csproj" />
+    <ProjectReference Include="..\..\Shared\YellowPages.Shared\YellowPages.Shared\YellowPages.Shared.csproj" />
   </ItemGroup>
 
 </Project>
