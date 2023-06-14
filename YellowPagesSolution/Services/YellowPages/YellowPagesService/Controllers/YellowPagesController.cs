@@ -18,7 +18,6 @@ public class YellowPagesController : CustomBaseController
     {
         _yellowPagesService = yellowPagesService;
         _sendEndpointProvider = sendEndpointProvider;
-
     }
 
     [HttpGet]
@@ -60,18 +59,16 @@ public class YellowPagesController : CustomBaseController
         return CreateActionResultInstance(response);
     }
 
-    [Microsoft.AspNetCore.Mvc.HttpPostAttribute]
-    [Microsoft.AspNetCore.Mvc.RouteAttribute("/api/[controller]/ReceiveReport/{location}")]
+    [HttpPostAttribute]
+    [RouteAttribute("/api/[controller]/ReceiveReport/{location}")]
     public async Task<IActionResult> ReceiveReport(string location)
     {
         var createMessage = new CreateReportCommand();
         createMessage.Location = location;
         var sendEndpoint = await _sendEndpointProvider.GetSendEndpoint(new Uri("queue:create-report-service"));
 
-        await sendEndpoint.Send<CreateReportCommand>(createMessage);
+        await sendEndpoint.Send(createMessage);
 
         return CreateActionResultInstance(YellowPages.Shared.Dtos.Response<NoContent>.Success(200));
     }
-
-
 }

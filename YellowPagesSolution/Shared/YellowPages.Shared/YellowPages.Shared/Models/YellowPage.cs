@@ -11,9 +11,7 @@ namespace YellowPages.Shared.Models
         PhoneInformation = new HashSet<PhoneInformation>();
     }
 
-    //[MongoDB.Bson.Serialization.Attributes.BsonId]
-    //[MongoDB.Bson.Serialization.Attributes.BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
-    //public string Id { get; set; }
+
 
     public string Name { get; set; }
     public string SurName { get; set; }

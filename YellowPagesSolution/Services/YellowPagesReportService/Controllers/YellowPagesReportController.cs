@@ -1,59 +1,47 @@
-﻿
-
-
-
+﻿using Microsoft.AspNetCore.Mvc;
+using YellowPages.Shared.ControllerBase;
 using YellowPagesReportService.Business.Abstract;
 
 namespace YellowPagesReportService.Controllers;
 
-[Microsoft.AspNetCore.Mvc.RouteAttribute("api/[controller]")]
-[Microsoft.AspNetCore.Mvc.ApiControllerAttribute]
-public class YellowPagesReportController : YellowPages.Shared.ControllerBase.CustomBaseController
+[Route("api/[controller]")]
+[ApiController]
+public class YellowPagesReportController : CustomBaseController
 {
     private readonly IYellowPagesReportService _yellowPagesReportService;
 
     public YellowPagesReportController(
-      IYellowPagesReportService yellowPagesReportService)
+        IYellowPagesReportService yellowPagesReportService)
     {
         _yellowPagesReportService = yellowPagesReportService;
     }
 
 
-    [Microsoft.AspNetCore.Mvc.HttpGetAttribute]
-    [Microsoft.AspNetCore.Mvc.RouteAttribute("/api/[controller]/ReportByLocation/{locationName}")]
-    public async Task<Microsoft.AspNetCore.Mvc.IActionResult> GetReportByLocation(string locationName)
+    [HttpGet]
+    [Route("/api/[controller]/ReportByLocation/{locationName}")]
+    public async Task<IActionResult> GetReportByLocation(string locationName)
     {
         var response = await _yellowPagesReportService.CreateAsync(locationName);
 
         return CreateActionResultInstance(response);
     }
 
-    [Microsoft.AspNetCore.Mvc.HttpGetAttribute]
-    [Microsoft.AspNetCore.Mvc.RouteAttribute("/api/[controller]/GetAllReport")]
-    public async Task<Microsoft.AspNetCore.Mvc.IActionResult> GetAllReport()
+    [HttpGet]
+    [Route("/api/[controller]/GetAllReport")]
+    public async Task<IActionResult> GetAllReport()
     {
         var response = await _yellowPagesReportService.GetAllAsync();
 
         return CreateActionResultInstance(response);
     }
 
-    [Microsoft.AspNetCore.Mvc.HttpGetAttribute]
-    [Microsoft.AspNetCore.Mvc.RouteAttribute("/api/[controller]/ReportById/{id}")]
-    public async Task<Microsoft.AspNetCore.Mvc.IActionResult> GetReportById(string id)
+    [HttpGet]
+    [Route("/api/[controller]/ReportById/{id}")]
+    public async Task<IActionResult> GetReportById(string id)
     {
-        //var response = await _yellowPagesReportService.CreateAsync(id);
-
         var response = await _yellowPagesReportService.GetReportByIdAsync(id);
 
         return CreateActionResultInstance(response);
     }
 
-    //[Microsoft.AspNetCore.Mvc.HttpPost]
-    //public async Task<Microsoft.AspNetCore.Mvc.IActionResult> Create(
-    //    ContactServicesCD.Dtos.ContactCreateDto contactCreateDto)
-    //{
-    //    var response = await _contactService.CreateAsync(contactCreateDto);
-
-    //    return CreateActionResultInstance(response);
-    //}
 }

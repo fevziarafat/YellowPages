@@ -4,8 +4,8 @@ namespace YellowPagesService.Business.Abstract;
 
 public interface ILocationInformationService
 {
-    Task<YellowPages.Shared.Dtos.Response<LocationInformationDto>> CreateAsync(
+    Task<Response<LocationInformationDto>> CreateAsync(
         LocationInformationCreateDto locationInformationCreateDto);
 
-    Task<YellowPages.Shared.Dtos.Response<YellowPages.Shared.Dtos.NoContent>> DeleteAsync(string id);
+    Task<Response<NoContent>> DeleteAsync(string id);
 }
