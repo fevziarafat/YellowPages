@@ -1,11 +1,13 @@
-﻿using YellowPages.Shared.Dtos;
+﻿using Microsoft.AspNetCore.Mvc;
+using YellowPages.Shared.ControllerBase;
+using YellowPages.Shared.Dtos;
 using YellowPagesService.Business.Abstract;
 
 namespace YellowPagesService.Controllers;
 
-[Microsoft.AspNetCore.Mvc.Route("api/[controller]")]
-[Microsoft.AspNetCore.Mvc.ApiController]
-public class PhonesController : YellowPages.Shared.ControllerBase.CustomBaseController
+[Route("api/[controller]")]
+[ApiController]
+public class PhonesController : CustomBaseController
 {
     private readonly IPhoneInformationService _phoneInformationService;
 
@@ -15,8 +17,8 @@ public class PhonesController : YellowPages.Shared.ControllerBase.CustomBaseCont
     }
 
 
-    [Microsoft.AspNetCore.Mvc.HttpPost]
-    public async Task<Microsoft.AspNetCore.Mvc.IActionResult> Create(PhoneInformationCreateDto phoneInformationCreateDto)
+    [HttpPost]
+    public async Task<IActionResult> Create(PhoneInformationCreateDto phoneInformationCreateDto)
     {
         var response = await _phoneInformationService.CreateAsync(phoneInformationCreateDto);
 
@@ -24,8 +26,8 @@ public class PhonesController : YellowPages.Shared.ControllerBase.CustomBaseCont
     }
 
 
-    [Microsoft.AspNetCore.Mvc.HttpDelete("{id}")]
-    public async Task<Microsoft.AspNetCore.Mvc.IActionResult> Delete(string id)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(string id)
     {
         var response = await _phoneInformationService.DeleteAsync(id);
 

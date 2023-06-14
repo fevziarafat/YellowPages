@@ -1,11 +1,13 @@
-﻿using YellowPages.Shared.Dtos;
+﻿using Microsoft.AspNetCore.Mvc;
+using YellowPages.Shared.ControllerBase;
+using YellowPages.Shared.Dtos;
 using YellowPagesService.Business.Abstract;
 
 namespace YellowPagesService.Controllers;
 
-[Microsoft.AspNetCore.Mvc.Route("api/[controller]")]
-[Microsoft.AspNetCore.Mvc.ApiController]
-public class LocationsController : YellowPages.Shared.ControllerBase.CustomBaseController
+[Route("api/[controller]")]
+[ApiController]
+public class LocationsController : CustomBaseController
 {
     private readonly ILocationInformationService _locationInformationService;
 
@@ -15,8 +17,8 @@ public class LocationsController : YellowPages.Shared.ControllerBase.CustomBaseC
     }
 
 
-    [Microsoft.AspNetCore.Mvc.HttpPost]
-    public async Task<Microsoft.AspNetCore.Mvc.IActionResult> Create(
+    [HttpPost]
+    public async Task<IActionResult> Create(
         LocationInformationCreateDto locationInformationCreateDto)
     {
         var response = await _locationInformationService.CreateAsync(locationInformationCreateDto);
@@ -25,8 +27,8 @@ public class LocationsController : YellowPages.Shared.ControllerBase.CustomBaseC
     }
 
 
-    [Microsoft.AspNetCore.Mvc.HttpDelete("{id}")]
-    public async Task<Microsoft.AspNetCore.Mvc.IActionResult> Delete(string id)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(string id)
     {
         var response = await _locationInformationService.DeleteAsync(id);
 

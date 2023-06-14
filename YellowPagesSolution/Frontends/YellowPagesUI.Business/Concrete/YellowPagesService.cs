@@ -45,7 +45,6 @@ namespace YellowPagesUI.Business.Concrete
         {
 
             var yellowpages = await _httpClient.GetAsync($"yellowpages/GetAllInformationByUserId/{id}");
-            //var contacts = await GetByIdAsync(id);
 
             if (yellowpages == null)
 

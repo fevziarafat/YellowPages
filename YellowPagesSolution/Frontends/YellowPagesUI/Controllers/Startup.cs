@@ -20,7 +20,6 @@ namespace Contact.Controllers
             services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
             services.AddHttpContextAccessor();
             services.AddAccessTokenManagement();
-            //services.AddSingleton<PhotoHelper>();
             services.AddScoped<YellowPages.Shared.Services.ISharedIdentityService, YellowPages.Shared.Services.SharedIdentityService>();
 
 
